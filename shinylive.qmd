@@ -11,7 +11,7 @@ filters:
 
 `shinylive` allows for 'serverless' deployment of shiny apps. The front-end UI connects to a WebR server session, both loaded in the user's browser.
 
-Below you can edit the app code in the editor on the left and re-launch the live app in the viewer on the right with your changes.
+Below you can edit the app code in the editor on the left and re-launch the live app with your changes in the viewer on the right.
 
 :::{.column-screen-inset}
 ```{shinylive-r}

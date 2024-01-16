@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "R in the browser"
+  search: false
+  navbar:
+    left:
+      - href: web-r.qmd
+        text: WebR
+      - href: shinylive.qmd
+        text: shinylive
+
+resources: 
+  - "webr-serviceworker.js"
+  - "webr-worker.js"
+  - "shinylive-sw.js"

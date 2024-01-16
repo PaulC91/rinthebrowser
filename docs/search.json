@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "shinylive.html",
+    "href": "shinylive.html",
+    "title": "shinylive",
+    "section": "",
+    "text": "shinylive allows for ‘serverless’ deployment of shiny apps. The front-end UI connects to a WebR server session, both loaded in the user’s browser.\nBelow you can edit the app code in the editor on the left and re-launch the live app in the viewer on the right with your changes.\n\n#| standalone: true\n#| components: [editor, viewer]\n#| viewerHeight: 400\n\n# load packages\nlibrary(shiny)\nlibrary(bslib)\nlibrary(outbreaks)\nlibrary(ggplot2)\nlibrary(incidence2)\n\n# load data\nebola &lt;- ebola_sim_clean$linelist\nintervals &lt;- c(\"daily\", \"isoweek\", \"epiweek\", \"monthly\", \"quarterly\", \"yearly\")\n\n# define user interface\nui &lt;- page_fillable(\n  card(\n    card_header(\"Incidence\"),\n    card_body(\n      div(\n        class = \"d-flex justify-content-between\",\n        selectInput(\"interval\", \"Interval\", choices = intervals),\n        selectInput(\"group\", \"Group\", choices = c(\"gender\", \"outcome\"))\n      ),\n      plotOutput(\"plot\") \n    )\n  )\n)\n\n# define server function\nserver &lt;- function(input, output, session) {\n  inci &lt;- reactive({\n    incidence(\n      ebola, \n      date_index = \"date_of_onset\", \n      groups = input$group,\n      interval = input$interval\n    )\n  })\n  output$plot &lt;- renderPlot({\n    plot(inci(), fill = isolate(input$group))\n  })\n}\n\n# launch the app\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "web-r.html",
+    "href": "web-r.html",
+    "title": "WebR",
+    "section": "",
+    "text": "WebR is is an R session running directly in your browser. This allows you to run R code on the web without the need for connecting to a back-end server running R.\nWhen WebR has loaded and the requested packages have been installed, you can run R code and see the results in the code chunks below.\nMost packages on CRAN are available in WebR but they must be downloaded and installed on the user’s browser each time they launch the webpage. Depending on the number of packages being installed and the user’s internet speed, this could take some time. You can see a table of available packages here.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nExercise\n\n\n\nCalculate and plot the incidence again, this time using an interval of 1 week.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYour result should look like the plot below\n\n\n\n\n\n\n\n\nExpected Result\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution Code\n\n\n\n\n\n\ninci &lt;- incidence(\n  ebola, \n  date_index = \"date_of_onset\",\n  interval = \"week\"\n)\nplot(inci)"
+  }
+]

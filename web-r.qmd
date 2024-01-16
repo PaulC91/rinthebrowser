@@ -1,0 +1,88 @@
+---
+title: WebR
+author: Paul Campbell
+engine: knitr
+filters:
+  - webr
+webr:
+  packages: ['dplyr', 'ggplot2', 'outbreaks', 'incidence2']
+  autoload-packages: false
+---
+
+WebR is is an R session running directly in your browser. This allows you to run R code on the web without the need for connecting to a back-end server running R. 
+
+When WebR has loaded and the requested packages have been installed, you can run R code and see the results in the code chunks below.
+
+Most packages on CRAN are available in WebR but they must be downloaded and installed on the user's browser each time they launch the webpage. Depending on the number of packages being installed and the user's internet speed, this could take some time. You can see a [table of available packages here.](https://repo.r-wasm.org/){.external target="_blank"}
+
+```{webr-r}
+#| message: false
+#| warning: false
+
+# load packages and data
+library(dplyr)
+library(ggplot2)
+library(outbreaks)
+library(incidence2)
+
+ebola <- ebola_sim_clean$linelist
+glimpse(ebola)
+```
+
+```{webr-r}
+# compute incidence
+inci <- incidence(
+  ebola, 
+  date_index = "date_of_onset"
+)
+glimpse(inci)
+```
+
+```{webr-r}
+# plot the results
+plot(inci)
+```
+
+::: {.callout-note}
+## Exercise
+
+Calculate and plot the incidence again, this time using an interval of 1 week.
+
+```{webr-r}
+# write your code here
+```
+
+Your result should look like the plot below
+:::
+
+::: {.callout-tip collapse="true"}
+## Expected Result
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(incidence2)
+inci <- incidence(
+  outbreaks::ebola_sim_clean$linelist, 
+  date_index = "date_of_onset",
+  interval = "week"
+)
+plot(inci)
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution Code
+
+```{r}
+#| echo: true
+#| eval: false
+inci <- incidence(
+  ebola, 
+  date_index = "date_of_onset",
+  interval = "week"
+)
+plot(inci)
+```
+:::

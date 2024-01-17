@@ -36,7 +36,7 @@ ui <- page_fillable(
     card_header("Incidence"),
     card_body(
       div(
-        class = "d-flex justify-content-between",
+        class = "d-flex justify-content-start",
         selectInput("interval", "Interval", choices = intervals),
         selectInput("group", "Group", choices = c("gender", "outcome"))
       ),

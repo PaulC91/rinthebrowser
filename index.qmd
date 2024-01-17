@@ -1,0 +1,23 @@
+---
+title: WebR and shinylive examples
+author: Paul Campbell
+---
+
+This website, built with [quarto](https://quarto.org/){.external target="_blank"} and hosted on github pages, showcases both the `WebR` and `shinylive` quarto extensions. 
+
+The [WebR](/web-r.html) page shows an example of an interactive tutorial in which you can run R code and see the results directly in the browser without being connected to an R session on a remote server.
+
+The [shinylive](/shinylive.html) page shows how a live shiny app can run and be edited in the browser via WebR.
+
+## Resources
+
+- [WebR Docs](https://docs.r-wasm.org/webr/latest/){.external target="_blank"}
+- [WebR REPL](https://webr.r-wasm.org/latest/){.external target="_blank"}
+- [WebR packages](https://repo.r-wasm.org/){.external target="_blank"}
+- [WebR quarto extension site](https://quarto-webr.thecoatlessprofessor.com/){.external target="_blank"}
+- [Webr for teaching blogpost](https://jabberwocky.weecology.org/2023/03/13/{.external target="_blank"}a-brief-introduction-to-using-webr-and-quarto-for-client-side-interactive-lesson-material/)
+- [shinylive examples](https://shinylive.io/r/examples/){.external target="_blank"}
+- [shinylive online editor](https://shinylive.io/r/editor/){.external target="_blank"}
+- [shinylive R pkg repo](https://github.com/posit-dev/r-shinylive){.external target="_blank"}
+- [shinylive quarto extension repo](https://github.com/quarto-ext/shinylive){.external target="_blank"}
+- [shinylive quarto example](https://github.com/coatless-quarto/r-shinylive-demo/tree/main){.external target="_blank"}

@@ -12,5 +12,19 @@
     "title": "WebR",
     "section": "",
     "text": "WebR is is an R session running directly in your browser. This allows you to run R code on the web without the need for connecting to a back-end server running R.\nWhen WebR has loaded and the requested packages have been installed, you can run R code and see the results in the code chunks below.\nMost packages on CRAN are available in WebR but they must be downloaded and installed on the user’s browser each time they launch the webpage. Depending on the number of packages being installed and the user’s internet speed, this could take some time. You can see a table of available packages here.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nExercise\n\n\n\nCalculate and plot the incidence again, this time using an interval of 1 week.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYour result should look like the plot below\n\n\n\n\n\n\n\n\nExpected Result\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution Code\n\n\n\n\n\n\ninci &lt;- incidence(\n  ebola, \n  date_index = \"date_of_onset\",\n  interval = \"week\"\n)\nplot(inci)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "WebR and shinylive examples",
+    "section": "",
+    "text": "This website, built with quarto and hosted on github pages, showcases both the WebR and shinylive quarto extensions.\nThe WebR page shows an example of an interactive tutorial in which you can run R code and see the results directly in the browser without being connected to an R session on a remote server.\nThe shinylive page shows how a live shiny app can run and be edited in the browser via WebR."
+  },
+  {
+    "objectID": "index.html#resources",
+    "href": "index.html#resources",
+    "title": "WebR and shinylive examples",
+    "section": "Resources",
+    "text": "Resources\n\nWebR Docs\nWebR REPL\nWebR packages\nWebR quarto extension site\nWebr for teaching blogpost\nshinylive examples\nshinylive online editor\nshinylive R pkg repo\nshinylive quarto extension repo\nshinylive quarto example"
   }
 ]

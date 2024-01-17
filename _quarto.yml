@@ -7,10 +7,15 @@ website:
   search: false
   navbar:
     left:
+      - href: index.qmd
+        text: "Home"
       - href: web-r.qmd
         text: WebR
       - href: shinylive.qmd
         text: shinylive
+    tools:
+      - href: https://github.com/paulc91/rinthebrowser
+        icon: "github"
 
 resources: 
   - "webr-serviceworker.js"
